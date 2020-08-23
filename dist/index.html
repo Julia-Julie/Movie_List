@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popular Movies</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1 class="heading">Movies</h1>
+
+        <p class="input-container">
+          <input type="text" id="search" placeholder="Search a movie ..." />
+          <i class="fas fa-search fa-2x"></i>
+        </p>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <div class="container">
+        <!-- Sort -->
+        <section id="sorts">
+          <button id="sort1" class="sort">Popular</button>
+          <button id="sort2" class="sort">Newest</button>
+        </section>
+
+        <section id="movies">
+          <!-- Here are shown movies -->
+        </section>
+        <section id="movies2"></section>
+        <section id="movies3"></section>
+        <section id="movies4"></section>
+
+        <section id="output">
+          <input type="button" value="Show more..." id="btn1" class="btn" />
+          <input type="button" value="Show all films" id="btn2" class="btn" />
+          <a class="lnk" href="movielist.html">Movie List</a>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+      <div class="footer-content">
+        <p>Copyright &copy; 2020, All rights reserved</p>
+        <div class="social">
+          <i class="fab fa-facebook-f fa-2x"></i>
+          <i class="fab fa-instagram fa-2x"></i>
+          <i class="fab fa-vk fa-2x"></i>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,541 @@
+// MAIN page
+
+// Variables
+$main-color: rgb(225, 248, 255);
+$second-color: rgb(39, 7, 7);
+$bg-color: #333;
+
+// General styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    black,
+    #777,
+    #333,
+    rgb(30, 37, 30),
+    #ccc,
+    black
+  );
+}
+
+.container {
+  max-width: 1250px;
+  padding: 1rem 2rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.heading {
+  font-size: 4rem;
+  color: #ffffff;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bolder;
+  letter-spacing: 10px;
+  text-shadow: 2px 2px 12px $second-color, -2px -2px 12px $second-color;
+}
+
+.lnk {
+  display: block;
+  font-size: 1.45rem;
+  font-style: italic;
+  transition: 0.4s;
+  
+
+  &:active {
+    color: green;
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: yellowgreen;
+  }
+  &:hover {
+    color: red;
+  }
+}
+
+//Search
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  #search {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+
+    &:focus {
+      background: $main-color;
+    }
+  }
+  .fas {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    display: block;
+    font-weight: bold;
+    color: $second-color;
+    z-index: 5;
+    transition: 0.3s;
+  }
+}
+
+
+// Popular button
+#movies2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .collection-div {
+    position: relative;
+    border: 1px dotted $main-color;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    background: beige;
+    width: 60%;
+    transition: 0.5s;
+
+    &:hover {
+      transform: skew(-4deg) scale(1.1);
+      opacity: 0.9;
+      box-shadow: 1px 1px 5px 5px #777;
+    }
+
+    i {
+      display: none;
+    }
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      background: rgb(170, 170, 5);
+      i {
+        display: block;
+        position: absolute;
+        top: 20%;
+        right: 7%;
+        color: rgb(27, 8, 46);
+      }
+    }
+
+    p {
+      background: rgb(29, 214, 121);
+      box-shadow: 0px 0px 10px 6px #333;
+      border-radius: 20px;
+      padding: 5px 10px;
+      width: 15%;
+      font-size: 1.3rem;
+      font-weight: bolder;
+      text-decoration: underline;
+    }
+    h2 {
+      font-family: "Shadows Into Light", cursive;
+    }
+  }
+}
+
+// New
+#movies3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .collection-div {
+    border: 1px dotted $main-color;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: lightyellow;
+    width: 55%;
+    transition: 0.8s;
+
+    &:nth-child(even){
+      transform: translateX(-30%);
+    }
+
+    &:nth-child(odd){
+      transform: translateX(30%);
+    }
+
+    &:first-child,
+    &:nth-child(3),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(10),
+    &:nth-child(13),
+    &:nth-child(19) {
+      position: relative;
+      animation-name: myanim;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      transition: 1s;
+      color: #fff;
+      text-shadow: 0px 0px 4px black;
+      i {
+        display: block;
+        position: absolute;
+        top: 1.3rem;
+        right: 1rem;
+        color: #ccc;
+        text-shadow: 1px 1px 2px black;
+      }
+    }
+
+    @keyframes myanim {
+      0% {
+        background: rgb(216, 133, 78);
+      }
+      25% {
+        background: rgb(131, 190, 96);
+      }
+      50% {
+        background: rgb(182, 255, 210);
+      }
+      75% {
+        background: rgb(144, 146, 212);
+      }
+    }
+
+    i {
+      display: none;
+    }
+
+
+    p {
+      background: rgb(141, 21, 189);
+      box-shadow: 0px 0px 10px 6px #333;
+      border-radius: 20px;
+      padding: 5px 10px;
+      width: 42%;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bolder;
+      text-decoration: overline;
+      font-size: 1.4rem;
+      letter-spacing: 4px;
+    }
+    h2 {
+      font-family: "Shadows Into Light", cursive;
+    }
+
+    &:hover{
+      transform: scale(1.1);
+      box-shadow: 0px 0px 10px 5px #fff;
+      margin: 1.3rem;
+    }
+  }
+}
+
+
+// Found Movies
+#foundMovies{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+ 
+  .foundMovie{
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 0 5px 0.5px #cccccc;
+  border-radius: 5px;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+ 
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 0.2rem 0px;
+    margin: 0;
+    height: 20%;
+    width: 100%;
+  
+
+  
+  }
+  & > div:last-child{
+  
+      img {
+      display: block;
+      width: 100%;
+      height: 200px;
+    }
+  }
+  }
+
+
+
+
+}
+
+// Section Movies
+#movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5rem;
+}
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 0 5px 0.5px #cccccc;
+  border-radius: 5px;
+  height: 17.75rem;
+
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 0.2rem 0px;
+    margin: 0;
+    height: 80%;
+
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  & > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// Sort buttons
+#sorts {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0.5rem 1.5rem;
+
+  .sort {
+    margin-right: 4rem;
+    padding: 0.4rem 1.2rem;
+    font-size: 1rem;
+    color: $main-color;
+    background: $second-color;
+    transition: 0.6s;
+
+    &:hover {
+      transform: scale(1.08);
+      color: $second-color;
+      background: $main-color;
+    }
+  }
+}
+
+// Section Output
+#output {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  .btn {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    margin-right: 5rem;
+    border: none;
+    border-radius: 5px;
+    color: $main-color;
+    background-color: $bg-color;
+    font-weight: bold;
+    letter-spacing: 1px solid #333;
+    font-size: 1rem;
+    transition: ease-in-out 0.35s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 3px 2px $main-color;
+    }
+  }
+}
+
+// MOVIE_LIST PAGE
+
+#section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p{
+    color: #fff;
+    font-size: 1.2rem;
+    
+  }
+}
+
+#list {
+  margin: 1rem 0 0 2rem;
+  .collection-item {
+    background: $main-color;
+    color: $second-color;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-style: italic;
+    list-style-type: square;
+    transition: 0.8s;
+    overflow: auto;
+    height: 2.5rem;
+    
+
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 2px 1px solid #333 $main-color;
+      background: $second-color;
+      color: #ffffff;
+    }
+  }
+}
+
+.col-it-overflow{
+  height: 5rem;
+  overflow: auto;
+}
+
+// Modal
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #333 solid red;
+  background: #ffffff;
+  z-index: 10;
+  width: 80%;
+  height: auto;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.spanInside{
+  color: rgb(6, 97, 54);
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+.plot{
+ font-style: italic;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#description{
+  position: relative;
+  display: block;
+}
+.remove{
+  position: absolute;
+  bottom: 0.7rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 11;
+}
+
+
+
+
+
+
+
+// A solution without background-images:
+#input_container {
+  position: relative;
+  padding: 0 0 0 20px;
+  margin: 0 20px;
+  background: #ddd;
+  direction: rtl;
+  width: 200px;
+}
+
+
+// FOOTER
+#main-footer {
+  padding-left: 2rem;
+  padding-bottom: 0;
+  margin-bottom: -1rem;
+  margin-top: 1rem;
+  background: #444;
+  height: 4rem;
+
+
+  .footer-content {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    align-content: center;
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+
+      .fab {
+        border-radius: 50%;
+         margin-right: 20px;
+        padding: 0.5rem 2rem;
+        padding-left: 2rem;
+        transition: all 1s;
+
+        &:hover {
+          color: #fff;
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
